@@ -1,23 +1,23 @@
 angular.module('app')
-    .controller('ProdutoListController', ProdutoListController);
+    .controller('PedidoListController', PedidoListController);
 
-ProdutoListController.$inject = ['ProdutoService'];
+PedidoListController.$inject = ['PedidoService'];
 
-function ProdutoListController(ProdutoService){
+function PedidoListController(PedidoService){
     var vm = this;
-    vm.produtos = [];
+    vm.pedidos = [];
 
     function _load() {
-        ProdutoService.findAll()
+        PedidoService.findAll()
             .then(function (dados) {
-                vm.produtos = dados;
+                vm.pedidos = dados;
             });
     }
     _load();
 
     vm.excluir = function (id) {
         if (confirm('Deseja realmente excluir?')) {
-            ProdutoService.remove(id)
+            PedidoService.remove(id)
                 .then(function() {
                     _load();
                 });

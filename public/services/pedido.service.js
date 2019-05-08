@@ -1,10 +1,10 @@
 angular.module('app')
-    .service('ProdutoService', ProdutoService);
+    .service('PedidoService', PedidoService);
 
-ProdutoService.$inject = ['$http']
+PedidoService.$inject = ['$http']
 
-function ProdutoService ($http) {
-    var URL = '/produtos';
+function PedidoService ($http) {
+    var URL = '/pedidos';
 
     var service = this;
 
@@ -22,8 +22,8 @@ function ProdutoService ($http) {
             });
     }
 
-    service.update = function (id, produto) {
-        return $http.put(URL + '/' + id, produto)
+    service.update = function (id, pedido) {
+        return $http.put(URL + '/' + id, pedido)
             .then(function(resp) {
                 return resp.data;
             });
@@ -33,8 +33,8 @@ function ProdutoService ($http) {
         return $http.delete(URL + '/' + id);
     }
 
-    service.insert = function (produto) {
-        return $http.post(URL, produto)
+    service.insert = function (pedido) {
+        return $http.post(URL, pedido)
             .then(function(resp) {
                 return resp.data;
             });

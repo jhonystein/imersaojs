@@ -1,25 +1,29 @@
-<h2>Novo Produto</h2>
-<form>
-    <div class="form-row">
-        <div class="form-group col-md-6">
-            <label for="inputEmail4">Código</label>
-            <input type="email" class="form-control" id="inputEmail4" placeholder="Email">
+<div class="col-md-6 mx-auto">
+    <h2>{{vm.titulo}}</h2>
+    <form>
+        <div class="form-row">
+            <div class="form-group col-md-6">
+                <label>Código:</label>
+                <input ng-model="vm.produto.codigo" type="text" class="form-control">
+            </div>
         </div>
-    </div>
-    <div class="form-group">
-        <label for="inputAddress">Descrição</label>
-        <input type="text" class="form-control" id="inputAddress" placeholder="Rua dos Bobos, nº 0">
-    </div>
-    <div class="form-row">
-        <div class="form-group col-md-6">
-            <label for="inputEmail4">Preço</label>
-            <input type="email" class="form-control" id="inputEmail4" placeholder="Email">
+        <div class="form-group">
+            <label>Descrição:</label>
+            <input ng-model="vm.produto.descricao" type="text" class="form-control">
         </div>
-        <div class="form-group col-md-6">
-            <label for="inputPassword4">Estoque</label>
-            <input type="password" class="form-control" id="inputPassword4" placeholder="Senha">
+        <div class="form-row">
+            <div class="form-group col-md-6">
+                <label>Preço:</label>
+                <input ng-model="vm.produto.preco" type="number" class="form-control">
+            </div>
+            <div class="form-group col-md-6">
+                <label>Estoque:</label>
+                <input ng-model="vm.produto.estoque" type="number" class="form-control">
+            </div>
         </div>
-    </div>
-    
-    <button type="button" class="btn btn-primary">Entrar</button>
-</form>
+        <div class="text-right">
+            <button ng-click="vm.save()" type="button" class="btn btn-primary">Salvar</button>
+            <button ui-sref="produtoList" type="button" class="btn btn-danger">Cancelar</button>
+        </div>
+    </form>
+</div>

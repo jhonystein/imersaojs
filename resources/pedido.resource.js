@@ -3,7 +3,7 @@ const pedidoModel = mongoose.model('pedidos');
 
 module.exports = function (app) {
     app.get('/pedidos', function (req, resp) {
-        pedidoModel.find({}, ['emissao', 'cliente'], {sort: {emissao: 1}})
+        pedidoModel.find({}, ['emissao', 'cliente', 'itens'], {sort: {emissao: 1}})
             .populate('cliente', 'documento nome email')
             .then(
                 function (data) {

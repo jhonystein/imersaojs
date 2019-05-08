@@ -42,5 +42,33 @@ function ConfigMain ($stateProvider) {
             templateUrl: '/partials/produtos/form.html',
             controller: 'ProdutoFormController',
             controllerAs: 'vm'
+        })
+        .state({
+            name: 'produtoEditar',
+            url: '/produtos/:id',
+            templateUrl: '/partials/produtos/form.html',
+            controller: 'ProdutoFormController',
+            controllerAs: 'vm'
+        })
+        .state({
+            name: 'pedidoList',
+            url: '/pedidoss',
+            templateUrl: '/partials/pedidos/list.html',
+            controller: 'PedidoListController',
+            controllerAs: 'vm'
+        })
+        .state({
+            name: 'pedidoNovo',
+            url: '/pedidos/novo',
+            templateUrl: '/partials/pedidos/form.html',
+            controller: 'PedidoFormController',
+            controllerAs: 'vm'
+        })
+        .state({
+            name: 'pedidoEditar',
+            url: '/pedidos/:id',
+            templateUrl: '/partials/pedidos/form.html',
+            controller: 'PedidoFormController',
+            controllerAs: 'vm'
         });
-} 
+}
